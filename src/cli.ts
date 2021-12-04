@@ -29,7 +29,7 @@ cli.version('0.0.1')
     .action(async(args, option, logger) => {
         try {
             const philipsTv = new PhilipsTV(args.host);
-            
+
             const result = await philipsTv.pair(async() : Promise<string> => {
                 const response : PinResponse = await prompt({
                     type: 'input',
@@ -140,7 +140,52 @@ cli.version('0.0.1')
         } finally {
             process.exit();
         }
-    });
+    })
 
+    .command('ambilight', 'Gets Ambilight status')
+    .argument('<host>', 'TV IP Address', cli.STRING)
+    .argument('<apiUser>', 'TV API Username', cli.STRING)
+    .argument('<apiPass>', 'TV API Password', cli.STRING)
+    .action(async(args, option, logger) => {
+        try {
+            const auth : Authentication = {
+                user: args.apiUser,
+                pass: args.apiPass,
+                sendImmediately: false,
+            };
+            const philipsTv = new PhilipsTV(args.host, undefined, auth);
+            const result = await philipsTv.getAmbilightState();
+            logger.info('OK', result);
+        } catch (error) {
+            logger.error(error.message);
+            logger.debug(error.stack);
+        } finally {
+            process.exit();
+        }
+    })
+
+    .command('set-ambilight', 'Set Ambilight status')
+    .argument('<ambilight>', 'Ambilight status', cli.BOOLEAN)
+    .argument('<host>', 'TV IP Address', cli.STRING)
+    .argument('<apiUser>', 'TV API Username', cli.STRING)
+    .argument('<apiPass>', 'TV API Password', cli.STRING)
+    .action(async(args, option, logger) => {
+        try {
+            const auth : Authentication = {
+                user: args.apiUser,
+                pass: args.apiPass,
+                sendImmediately: false,
+            };
+
+            const philipsTv = new PhilipsTV(args.host, undefined, auth);
+            const result = await philipsTv.setAmbilightState(args.ambilight);
+            logger.info('OK', result);
+        } catch (error) {
+            logger.error(error.message);
+            logger.debug(error.stack);
+        } finally {
+            process.exit();
+        }
+    });
 
 cli.parse(process.argv);
