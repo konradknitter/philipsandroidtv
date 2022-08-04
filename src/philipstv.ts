@@ -267,8 +267,7 @@ export class PhilipsTV {
         const url = `https://${this.ip}:${this.apiPort}/${String(this.config.apiVersion)}/audio/volume`;
         const request_body = { 'muted': false, 'current': value };
         this.volume = value;
-        const result = await post(url, JSON.stringify(request_body), this.auth!);
-        return JSON.parse(result);
+        return post(url, JSON.stringify(request_body), this.auth!);
     }
 
     async setVolumePercentage(percentage: number) {
@@ -279,27 +278,23 @@ export class PhilipsTV {
     async setMute(muted: boolean) {
         const url = `https://${this.ip}:${this.apiPort}/${String(this.config.apiVersion)}/audio/volume`;
         const request_body = { 'muted': muted, 'current': this.volume };
-        const result = await post(url, JSON.stringify(request_body), this.auth!);
-        return JSON.parse(result);
+        return post(url, JSON.stringify(request_body), this.auth!);
     }
 
     async sendKey(key: string) {
         const url = `https://${this.ip}:${this.apiPort}/${String(this.config.apiVersion)}/input/key`;
         const request_body = { 'key': key };
-        const result = await post(url, JSON.stringify(request_body), this.auth!);
-        return JSON.parse(result);
+        return post(url, JSON.stringify(request_body), this.auth!);
     }
 
     async launchApplication(application: Record<string, string>) {
         const url = `https://${this.ip}:${this.apiPort}/${String(this.config.apiVersion)}/activities/launch`;
-        const result = await post(url, JSON.stringify(application), this.auth!);
-        return JSON.parse(result);
+        return post(url, JSON.stringify(application), this.auth!);
     }
 
     async launchTVChannel(application: Record<string, string>) {
         const url = `https://${this.ip}:${this.apiPort}/${String(this.config.apiVersion)}/activities/tv`;
-        const result = await post(url, JSON.stringify(application), this.auth!);
-        return JSON.parse(result);
+        return post(url, JSON.stringify(application), this.auth!);
     }
 
     async turnOn(counter = 0) {
