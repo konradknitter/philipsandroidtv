@@ -1,44 +1,44 @@
 {
-    "name": "@konradknitter/philipsandroidtv",
-    "description": "Node.js module for Philips Andorid TV",
-    "version": "1.2.0",
-    "keywords": [
-        "philips",
-        "android",
-        "tv",
-        "androidtv"
-    ],
-    "scripts": {
-        "lint": "eslint --fix .",
-        "build": "rimraf ./dist && tsc"
-      },
-      "author": "konradknitter",
-      "homepage": "https://github.com/konradknitter/philipsandroidtv",
-      "repository": {
-        "type": "git",
-        "url": "git+https://github.com/konradknitter/philipsandroidtv.git"
-      },
-      "bugs": {
-        "url": "https://github.com/konradknitter/philipsandroidtv/issues"
-      },
-      "license": "MIT",
-      "main": "dist/philipstv.js",
-      "engines": {
-        "node": ">=10.0.0"
-      },
-      "dependencies": {
-        "request": "^2.69.0",
-        "wake_on_lan": "latest"
-      },
-      "devDependencies": {
-        "caporal": "^1.4.0",
-        "eslint": "^7.12.0",
-        "typescript": "^4.0.3",
-        "@types/node": "^14.14.2",
-        "@typescript-eslint/eslint-plugin": "^4.5.0",
-        "@typescript-eslint/parser": "^4.5.0",
-        "rimraf": "^3.0.2",
-        "ts-node": "^9.0.0",
-        "enquirer": "2.3.6"
-      }
+  "name": "@konradknitter/philipsandroidtv",
+  "description": "Node.js module for Philips Andorid TV",
+  "version": "1.2.0",
+  "keywords": [
+    "philips",
+    "android",
+    "tv",
+    "androidtv"
+  ],
+  "scripts": {
+    "lint": "eslint --fix .",
+    "build": "rimraf ./dist && tsc"
+  },
+  "author": "konradknitter",
+  "homepage": "https://github.com/konradknitter/philipsandroidtv",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/konradknitter/philipsandroidtv.git"
+  },
+  "bugs": {
+    "url": "https://github.com/konradknitter/philipsandroidtv/issues"
+  },
+  "license": "MIT",
+  "main": "dist/philipstv.js",
+  "engines": {
+    "node": ">=10.0.0"
+  },
+  "dependencies": {
+    "request": "^2.69.0",
+    "wake_on_lan": "latest"
+  },
+  "devDependencies": {
+    "caporal": "^1.4.0",
+    "eslint": "^7.12.0",
+    "typescript": "^4.0.3",
+    "@types/node": "^14.14.2",
+    "@typescript-eslint/eslint-plugin": "^4.5.0",
+    "@typescript-eslint/parser": "^4.5.0",
+    "rimraf": "^3.0.2",
+    "ts-node": "^9.0.0",
+    "enquirer": "2.3.6"
+  }
 }
