@@ -9,7 +9,7 @@ function makeDeviceId(length: number) {
     return result.join('');
 }
 
-export function createUniquePairRequestPayload() {
+export function createUniquePairRequestPayload(appName: string) {
     const deviceId = makeDeviceId(16);
     const payload = {
         'application_id': 'app.id',
@@ -18,7 +18,7 @@ export function createUniquePairRequestPayload() {
         'device': {
             'device_name': 'heliotrope',
             'device_os': 'Android',
-            'app_name': 'Homebridge',
+            'app_name': appName,
             'type': 'native',
             'app_id': 'app.id',
             'id': deviceId,
